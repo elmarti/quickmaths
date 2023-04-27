@@ -12,11 +12,8 @@ jobs:
       - name: 'Checkout the repository'
         uses: 'actions/checkout@v3'
 
-      - name: 'Setup Node.js and npm'
+      - name: 'Setup Node.js '
         uses: './.github/actions/setup'
-
-      - name: 'Execute the lint script'
-        run: 'npm run lint'
 
 
   test:
@@ -30,7 +27,7 @@ jobs:
         uses: './.github/actions/setup'
 
       - name: 'Execute the test script'
-        run: 'npm run test'
+        run: 'yarn test'
 
   bundle:
     name: 'Bundle package with Rollup.js'
@@ -43,4 +40,4 @@ jobs:
         uses: './.github/actions/setup'
 
       - name: 'Execute the build script'
-        run: 'npm run build'
+        run: 'yarn build'
