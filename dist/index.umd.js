@@ -1,5 +1,5 @@
 /*!
- * [libraryName] v0.0.0
+ * quickmaths v0.0.0
  * (c) [authorFullName]
  * Released under the MIT License.
  */
@@ -10,27 +10,25 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["[libraryCamelCaseName]"] = {}));
 })(this, (function (exports) { 'use strict';
 
-  /**
-   * Check if value is parseable to number.
-   * @example
-   * ```js
-   * isNumberParseable('AAAA');
-   * //=> false
-   *
-   * isNumberParseable('100');
-   * //=> true
-   *
-   * if (!isNumberParseable(value))
-   *   throw new Error('Value can\'t be parseable to `Number`.')
-   * return Number(value);
-   * ```
-   * @param value - An `unknown` value to be checked.
-   */
-  var isNumberParseable = function (value) {
-      return !Number.isNaN(Number(value));
+  /* eslint-disable prettier/prettier */
+  //@ts-ignore
+  var Maths = require('./quickmaths.js');
+  var init = function () { return Maths.init(); };
+  //@ts-ignore
+  var abs = function (x) {
+      return Maths._Abs(x);
   };
+  var ceil = function (x) {
+      return Maths._Ceil(x);
+  };
+  var min = function (a, b) { return Maths._Min(a, b); };
+  var max = function (a, b) { return Maths._Max(a, b); };
 
-  exports.isNumberParseable = isNumberParseable;
+  exports.abs = abs;
+  exports.ceil = ceil;
+  exports.init = init;
+  exports.max = max;
+  exports.min = min;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

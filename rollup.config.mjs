@@ -4,6 +4,8 @@ import { readFile } from 'node:fs/promises';
 
 import { terser } from 'rollup-plugin-terser';
 import typescript2 from 'rollup-plugin-typescript2';
+import { wasm } from '@rollup/plugin-wasm';
+import resolve from '@rollup/plugin-node-resolve';
 
 const packageJSON = JSON.parse(await readFile('./package.json', 'utf-8'));
 
@@ -70,6 +72,8 @@ const options = {
       useTsconfigDeclarationDir: true,
       tsconfig: './tsconfig.bundle.json',
     }),
+    wasm(),
+    resolve(),
   ],
 };
 

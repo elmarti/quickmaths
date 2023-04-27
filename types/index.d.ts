@@ -1,24 +1,6 @@
-/**
- * A Branded Type for values parseable to number.
- */
-export type NumberParseable = (number | string | boolean) & {
-    readonly isNumberParseble: unique symbol;
-};
-/**
- * Check if value is parseable to number.
- * @example
- * ```js
- * isNumberParseable('AAAA');
- * //=> false
- *
- * isNumberParseable('100');
- * //=> true
- *
- * if (!isNumberParseable(value))
- *   throw new Error('Value can\'t be parseable to `Number`.')
- * return Number(value);
- * ```
- * @param value - An `unknown` value to be checked.
- */
-export declare const isNumberParseable: (value: unknown) => value is NumberParseable;
+export declare const init: () => any;
+export declare const abs: (x: number) => number;
+export declare const ceil: (x: number) => number;
+export declare const min: (a: number, b: number) => number;
+export declare const max: (a: number, b: number) => number;
 //# sourceMappingURL=index.d.ts.map

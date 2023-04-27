@@ -1,5 +1,5 @@
 {
-  "name": "[libraryName]",
+  "name": "quickmaths",
   "version": "0.0.0",
   "description": "",
   "cdn": "dist/index.umd.js",
@@ -24,6 +24,8 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-wasm": "^6.1.2",
     "@types/eslint": "^8.4.10",
     "@types/jest": "^29.2.4",
     "@types/prettier": "^2.7.2",
@@ -46,6 +48,7 @@
   "scripts": {
     "doc": "typedoc src/index.ts",
     "test": "jest",
+    "benchmark": "yarn build && node ./benchmark.js",
     "lint": "eslint \"*/**/*.{ts,js,json}\"",
     "lint:fix": "eslint \"*/**/*.{ts,js,json}\" --fix",
     "build": "rollup --config ./rollup.config.mjs",
@@ -53,7 +56,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/[repositoryOwner]/[repositoryName].git"
+    "url": "git+https://github.com/elmarti/quickmaths.git"
   },
   "keywords": [],
   "author": {
@@ -61,7 +64,10 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/[repositoryOwner]/[repositoryName]/issues"
+    "url": "https://github.com/elmarti/quickmaths/issues"
   },
-  "homepage": "https://github.com/[repositoryOwner]/[repositoryName]#readme"
+  "homepage": "https://github.com/elmarti/quickmaths#readme",
+  "dependencies": {
+    "benchmark": "^2.1.4"
+  }
 }

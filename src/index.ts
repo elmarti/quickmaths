@@ -1,25 +1,25 @@
-/**
- * A Branded Type for values parseable to number.
- */
-export type NumberParseable = (number | string | boolean) & {
-  readonly isNumberParseble: unique symbol;
+/* eslint-disable prettier/prettier */
+//@ts-ignore
+const Maths = require('./quickmaths.js');
+export const init = () => Maths.init();
+//@ts-ignore
+export const abs = (x: number): number => {
+  return Maths._Abs(x);
 };
 
-/**
- * Check if value is parseable to number.
- * @example
- * ```js
- * isNumberParseable('AAAA');
- * //=> false
- *
- * isNumberParseable('100');
- * //=> true
- *
- * if (!isNumberParseable(value))
- *   throw new Error('Value can\'t be parseable to `Number`.')
- * return Number(value);
- * ```
- * @param value - An `unknown` value to be checked.
- */
-export const isNumberParseable = (value: unknown): value is NumberParseable =>
-  !Number.isNaN(Number(value));
+export const round = (x: number): number => {
+  return Maths._Round(x);
+}
+
+export const floor = (x: number): number => {
+  return Maths._Floor(x);
+};
+
+
+export const ceil = (x: number): number =>{
+  return Maths._Ceil(x);
+}
+
+export const min = (a: number, b: number): number => Maths._Min(a, b);
+
+export const max = (a: number, b: number): number => Maths._Max(a,b);
